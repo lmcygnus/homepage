@@ -1,14 +1,14 @@
 :root {
     --main-color: black;
 }
-body, header, .photo,  main, footer, .container, .tel, .mail {
+body, header, .aboutMe, .photo,  main, footer, .container, .tel, .mail {
     display: flex;
 }
 body {
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
     font-style: normal;
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin: 0;
 }
 
@@ -25,22 +25,23 @@ header {
 
 .aboutMe {
     background-color: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    max-height: 300px;
+    max-height: 400px;
     max-width: 50%;
-    position: relative;
+    flex-direction: column;
+}
+
+.aboutMe > .icons {
+    align-items:flex-end;
 }
 
 .photo {
-    position: absolute;
-    left: -30%;
     border-radius: 50%;
 }
 
 .name {
     font-size: 1rem;
-    position: absolute;
     top: 70%;
     left: 10%;
     color: var(--main-color);
