@@ -1,3 +1,23 @@
-* {
-    background-color: aquamarine;
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+header {
+    min-height: 200px;
+    border-bottom: 3px solid crimson;
+    flex-direction: row;
+}
+
+img {
+    height: auto;
+    max-width: 250px;
+}
+
+footer {
+    min-height: 200px;
+    border-top: 3px solid crimson;
 }
