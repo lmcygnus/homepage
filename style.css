@@ -1,33 +1,49 @@
-body, header, .photo,  main, footer, .container {
+:root {
+    --main-color: black;
+}
+body, header, .photo,  main, footer, .container, .tel, .mail {
     display: flex;
 }
 body {
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
-    font-size: 1rem;
     font-style: normal;
+    font-size: 1rem;
+    margin: 0;
 }
 
 header {
-    min-height: 200px;
-    border-bottom: 3px solid crimson;
+    min-height: 60vh;
+    border-bottom: 3px solid var(--main-color);
     flex-direction: row;
     gap: 5vw;
     padding: 1rem;
     justify-content: center;
     align-items: center;
+    background-color: coral ;
 }
 
-.photo {
+.aboutMe {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-height: 300px;
+    max-width: 50%;
     position: relative;
 }
 
+.photo {
+    position: absolute;
+    left: -30%;
+    border-radius: 50%;
+}
+
 .name {
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: 1rem;
     position: absolute;
     top: 70%;
     left: 10%;
-    color: black;
+    color: var(--main-color);
     text-shadow: -1px -1px 0 #ffffff,  
     1px -1px 0 #ffffff,
    -1px  1px 0 #ffffff,
@@ -36,11 +52,7 @@ header {
 
 img {
     height: auto;
-    max-width: 20vw;
-}
-
-.aboutMe {
-    max-width: 500px;
+    max-width: 25vw;
 }
 
 main {
@@ -68,7 +80,7 @@ main {
 footer {
     flex-direction: row;
     min-height: 200px;
-    border-top: 3px solid crimson;
+    border-top: 3px solid var(--main-color);
     gap: 5vw;
     padding: 1rem;
     justify-content: center;
@@ -78,4 +90,6 @@ footer {
 .contact {
     max-width: 500px;
 }
+
+
 
