@@ -1,23 +1,65 @@
-body {
+body, header, .photo,  main, footer, .container {
     display: flex;
+}
+body {
     flex-direction: column;
-    margin: 0;
     font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
+    font-size: 1rem;
     font-style: normal;
 }
+
 header {
     min-height: 200px;
     border-bottom: 3px solid crimson;
     flex-direction: row;
+    gap: 5vw;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 img {
     height: auto;
-    max-width: 250px;
+    max-width: 20vw;
+}
+
+.aboutMe {
+    max-width: 500px;
+}
+
+main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    padding: 20px;
+    margin: auto;
+}
+
+.project {
+    min-width: 200px;
+    min-height: 200px;
+    border: 1px solid gray;
 }
 
 footer {
+    flex-direction: row;
     min-height: 200px;
     border-top: 3px solid crimson;
+    gap: 5vw;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
 }
+
+.contact {
+    max-width: 500px;
+}
+
