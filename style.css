@@ -18,6 +18,22 @@ header {
     align-items: center;
 }
 
+.photo {
+    position: relative;
+}
+
+.name {
+    font-size: clamp(1rem, 2vw, 2rem);
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    color: black;
+    text-shadow: -1px -1px 0 #ffffff,  
+    1px -1px 0 #ffffff,
+   -1px  1px 0 #ffffff,
+    1px  1px 0 #ffffff;
+}
+
 img {
     height: auto;
     max-width: 20vw;
