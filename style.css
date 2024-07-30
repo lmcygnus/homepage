@@ -2,7 +2,19 @@
     --main-color: black;
 }
 
-body, header, .aboutMe, .photo, .icons,  main, .projectName, footer, .container, .tel, .mail {
+@keyframes zoomIn {
+    from {
+        transform: scale(0.7);
+    }
+    80% {
+        transform: scale(1.05);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+body, header, .aboutMe, .photo, .icons,  main, .projectName, footer, .container, .tel, .mail, .from {
     display: flex;
 }
 
@@ -37,6 +49,7 @@ header {
 
 .aboutMe > .icons {
     justify-content: flex-end;
+    max-height: 40px;
 }
 
 .photo {
@@ -63,6 +76,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 20px 0px 50px 0px;
 }
 
 .container {
@@ -76,6 +90,7 @@ main {
 }
 
 .project {
+    animation: 2s zoomIn 1 ease-in-out ;
     max-width: 300px;
     max-height: 300px;
     border-radius: 20px;
@@ -120,9 +135,16 @@ footer {
 }
 .tel, .mail {
     align-items: center;
-    border: 1px solid red;
     max-height: 30px;
+    margin-top: 20px;
 }
+
+.from {
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 
 
