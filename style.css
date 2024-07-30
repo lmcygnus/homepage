@@ -1,9 +1,11 @@
 :root {
     --main-color: black;
 }
-body, header, .aboutMe, .photo,  main, footer, .container, .tel, .mail {
+
+body, header, .aboutMe, .photo, .icons,  main, .projectName, footer, .container, .tel, .mail {
     display: flex;
 }
+
 body {
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
@@ -30,10 +32,11 @@ header {
     max-height: 400px;
     max-width: 50%;
     flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .aboutMe > .icons {
-    align-items:flex-end;
+    justify-content: flex-end;
 }
 
 .photo {
@@ -63,7 +66,7 @@ main {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 90%;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -73,9 +76,33 @@ main {
 }
 
 .project {
-    min-width: 200px;
-    min-height: 200px;
-    border: 1px solid gray;
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.projectScreenshot {
+    background-color: coral;
+    min-height: 180px;
+}
+
+.projectName {
+    padding: 10px 10px 0px 10px;
+    font-size: 16px;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 30px;
+}
+
+.icons {
+    gap: 10px;
+}
+
+.projectDescription {
+    font-size: 16px;
+    padding: 0px 10px 10px 10px;
 }
 
 footer {
@@ -90,6 +117,11 @@ footer {
 
 .contact {
     max-width: 500px;
+}
+.tel, .mail {
+    align-items: center;
+    border: 1px solid red;
+    max-height: 30px;
 }
 
 
