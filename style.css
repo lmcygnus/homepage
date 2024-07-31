@@ -1,10 +1,14 @@
 :root {
-    --main-color: black;
+    --main-color: coral;
 }
 
 @keyframes zoomIn {
     from {
+        opacity: 0;
         transform: scale(0.7);
+    }
+    30% {
+        opacity: 50%;
     }
     80% {
         transform: scale(1.05);
@@ -14,7 +18,7 @@
     }
 }
 
-body, header, .aboutMe, .photo, .icons,  main, .projectName, footer, .container, .tel, .mail, .from {
+body, header, .headerContainer, .aboutMe, .photo, .icons,  main, .projectName, footer, .footerPicture, .container, .tel, .mail, .from {
     display: flex;
 }
 
@@ -27,24 +31,30 @@ body {
 }
 
 header {
-    min-height: 60vh;
-    border-bottom: 3px solid var(--main-color);
+    min-height: 70vh;
     flex-direction: row;
     gap: 5vw;
     padding: 1rem;
     justify-content: center;
     align-items: center;
-    background-color: coral ;
+    background: linear-gradient(166deg, coral 59%, white 30%);
+}
+
+.headerContainer {
+    justify-content: center;
+    align-items: center;
 }
 
 .aboutMe {
     background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    max-height: 400px;
-    max-width: 50%;
+    padding: 15px 30px 30px 20px;
+    border-radius: 0px 10px 10px 0px;
+    height: auto;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 1rem;
+    flex-wrap: wrap;
+    max-width: 45vw;
 }
 
 .aboutMe > .icons {
@@ -52,12 +62,11 @@ header {
     max-height: 40px;
 }
 
-.photo {
-    border-radius: 50%;
+.photo , .footerPicture {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .name {
-    font-size: 1rem;
     top: 70%;
     left: 10%;
     color: var(--main-color);
@@ -65,11 +74,15 @@ header {
     1px -1px 0 #ffffff,
    -1px  1px 0 #ffffff,
     1px  1px 0 #ffffff;
+    position: absolute;
+    top: 55%;
+    left: 15%;
+    font-size: clamp(0.5rem, 1.7rem, 2.5rem);
 }
 
-img {
+.photo > img {
     height: auto;
-    max-width: 25vw;
+    max-width: 45vw;
 }
 
 main {
@@ -86,11 +99,11 @@ main {
     align-items: center;
     gap: 5vw;
     padding: 20px;
-    margin: auto;
 }
 
 .project {
-    animation: 2s zoomIn 1 ease-in-out ;
+    animation: zoomIn 1s ease-in-out 1s;
+    animation-fill-mode: backwards;
     max-width: 300px;
     max-height: 300px;
     border-radius: 20px;
@@ -113,6 +126,11 @@ main {
 
 .icons {
     gap: 10px;
+    max-height: 51px;
+}
+
+.icons > img {
+    cursor:pointer;
 }
 
 .projectDescription {
@@ -122,26 +140,78 @@ main {
 
 footer {
     flex-direction: row;
-    min-height: 200px;
-    border-top: 3px solid var(--main-color);
     gap: 5vw;
     padding: 1rem;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--main-color);
 }
 
 .contact {
     max-width: 500px;
 }
+
+.contact > p {
+    font-size: clamp(0.5rem, 1rem, 1.5rem);
+}
+
+.contact > .icons {
+    margin-top: 15px;
+}
+
 .tel, .mail {
     align-items: center;
     max-height: 30px;
     margin-top: 20px;
+    gap: 2%;
 }
 
 .from {
     justify-content: center;
     align-items: center;
+    background-color: var(--main-color);
+}
+
+.footerPicture > img {
+    height: auto;
+    min-width: 260px;
+    max-width: 25vw;
+}
+
+@media (max-width: 800px) { 
+    .headerContainer, .photo, .aboutMe {
+        display:block;
+    }
+    .headerContainer { 
+        width: 70vw;
+    }
+    .photo {
+        width: 35vw;
+        float: left;
+        margin-right: 10px;
+        background: none;
+    }
+    .photo > img {
+        width: 100%;
+    }
+    .aboutMe {
+        margin-top: 10%;
+        min-width: 100%;
+    }
+    .aboutMe > .icons {
+        display: none;
+    }
+    .name {
+        top: 8%;
+        left: 40%;
+    }
+    
+    .footerPicture > img {
+        height: auto;
+        min-width: none;
+        max-width: 25vw;
+    }
 }
 
 
