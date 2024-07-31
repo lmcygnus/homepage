@@ -37,7 +37,7 @@ header {
     padding: 1rem;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(166deg, coral 59%, white 30%);
+    background: linear-gradient(166deg, var(--main-color) 59%, white 30%);
 }
 
 .headerContainer {
@@ -112,7 +112,7 @@ main {
 }
 
 .projectScreenshot {
-    background-color: coral;
+    background-color: var(--main-color);
     min-height: 180px;
 }
 
@@ -144,16 +144,12 @@ footer {
     padding: 1rem;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     background-color: var(--main-color);
 }
 
 .contact {
-    max-width: 500px;
-}
-
-.contact > p {
-    font-size: clamp(0.5rem, 1rem, 1.5rem);
+    max-width: 60%;
+    flex-wrap: wrap;
 }
 
 .contact > .icons {
@@ -161,10 +157,10 @@ footer {
 }
 
 .tel, .mail {
-    align-items: center;
-    max-height: 30px;
-    margin-top: 20px;
     gap: 2%;
+    height: auto;
+    align-items: center;
+    font-size: 1rem;
 }
 
 .from {
@@ -175,11 +171,14 @@ footer {
 
 .footerPicture > img {
     height: auto;
-    min-width: 260px;
     max-width: 25vw;
+    min-width: 280px;
 }
 
-@media (max-width: 800px) { 
+@media (min-width: 501px) and (max-width: 800px) { 
+    header {
+        background: linear-gradient(166deg, var(--main-color) 69%, white 30%);
+    }
     .headerContainer, .photo, .aboutMe {
         display:block;
     }
@@ -194,25 +193,55 @@ footer {
     }
     .photo > img {
         width: 100%;
+        height: auto;
     }
     .aboutMe {
-        margin-top: 10%;
-        min-width: 100%;
+        margin: 10% 10%;
+        min-width: 80%;
+        border-radius: 10px;
     }
     .aboutMe > .icons {
         display: none;
     }
     .name {
-        top: 8%;
+        top: 2%;
         left: 40%;
     }
-    
     .footerPicture > img {
-        height: auto;
-        min-width: none;
-        max-width: 25vw;
+        min-width: 20vw;
+        max-width: 35vw;
     }
 }
+
+
+@media (max-width: 500px) { 
+    header {
+        min-height: 80vh;
+        background: linear-gradient(166deg, var(--main-color) 35%, white 30%);
+    }
+    .headerContainer {
+        flex-wrap: wrap;
+    }
+    .photo >img {
+        min-width: 60vw;
+        height: auto;
+    }
+    .aboutMe {
+        min-width: 50vw;
+        border-radius: 0%;
+        box-shadow: none;
+    }
+    .name {
+        top: 38%;
+        left: 25%;
+    }
+    footer {
+        flex-wrap: wrap;
+    }
+
+  }
+
+  
 
 
 
