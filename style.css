@@ -229,6 +229,8 @@ footer {
     }
     .headerContainer, .photo, .aboutMe {
         display:block;
+        animation: zoomIn 1s ease-in-out 1s;
+        animation-fill-mode: backwards;
     }
     .headerContainer { 
         width: 70vw;
@@ -238,6 +240,7 @@ footer {
         float: left;
         margin-right: 10px;
         background: none;
+        animation: none;
     }
     .photo > img {
         width: 100%;
@@ -247,6 +250,7 @@ footer {
         margin: 10% 10%;
         min-width: 80%;
         border-radius: 10px;
+        animation: none;
     }
     .aboutMe > .icons {
         display: none;
