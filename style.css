@@ -3,8 +3,36 @@
 }
 
 :root {
-    --main-color: coral;
+    --main-color: #B4ACA5;
 }
+
+@keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    80% {
+        transform: translateX(10%);
+      }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn2 {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    80% {
+      transform: translateX(-10%);
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 
 @keyframes zoomIn {
     from {
@@ -30,7 +58,7 @@ body {
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
     font-style: normal;
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin: 0;
     overflow-x: hidden;
 }
@@ -42,7 +70,7 @@ header {
     padding: 1rem;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(166deg, var(--main-color) 59%, white 30%);
+    background: linear-gradient(168deg, var(--main-color) 59%, white 30%);
 }
 
 .headerContainer {
@@ -51,13 +79,14 @@ header {
 }
 
 .aboutMe {
+    animation: slideIn2 1s ease-in-out 0.5s;
+    animation-fill-mode: backwards;
     background-color: white;
     padding: 15px 30px 30px 20px;
     border-radius: 0px 10px 10px 0px;
     height: auto;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    font-size: 1rem;
     flex-wrap: wrap;
     max-width: 45vw;
 }
@@ -74,7 +103,7 @@ header {
 .name {
     top: 70%;
     left: 10%;
-    color: var(--main-color);
+    color: rgb(58, 58, 58);
     text-shadow: -1px -1px 0 #ffffff,  
     1px -1px 0 #ffffff,
    -1px  1px 0 #ffffff,
@@ -82,9 +111,16 @@ header {
     position: absolute;
     top: 50%;
     left: 20%;
+    font-weight: bold;
     font-size: clamp(0.5rem, 1.7rem, 2.5rem);
+    animation: zoomIn 1s ease-in-out 2s;
+    animation-fill-mode: backwards;
 }
 
+.photo {
+    animation: slideIn 1s ease-in-out 0.5s;
+    animation-fill-mode: backwards;
+}
 .photo > img {
     height: auto;
     max-width: 45vw;
@@ -97,8 +133,13 @@ main {
     margin: 20px 0px 50px 0px;
 }
 
+main > h2 {
+    animation: zoomIn 1s ease-in-out 1s;
+    animation-fill-mode: backwards;
+}
+
 .container {
-    max-width: 90%;
+    max-width: 80%;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
